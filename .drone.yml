@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: test-python
+
+steps:
+  - name: install-dependencies
+    image: python:3.11
+    commands:
+      - pip install -r requirements.txt
+
+  - name: run-tests
+    image: python:3.11
+    commands:
+      - pytest
